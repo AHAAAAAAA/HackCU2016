@@ -24,3 +24,6 @@ Use the following commands:
   
   `pip install -r requirements.txt`
 
+# Usage
+
+`python manage.py runserver`
