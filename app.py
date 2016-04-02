@@ -9,7 +9,10 @@ app = Flask(__name__)
 def hello():
 	data = get_all_tweets('#Bahrain')
 	# tweets = sentimentAnalysis(data)
-	return data.json()
+	str = ''
+	for i in data:
+		str += i[2]+'\n'
+	return str
 
 @app.route('/signUp')
 def signUp():
@@ -22,4 +25,4 @@ def signUpUser():
     return json.dumps({'status':'OK','user':user,'pass':password});
 
 if __name__=="__main__":
-    app.run()
+    app.run(debug=True)

@@ -30,7 +30,7 @@ def get_all_tweets(topic):
 	# #keep grabbing tweets until there are no tweets left to grab
 	# while len(new_tweets) > 0:
 	# 	#all subsiquent requests use the max_id param to prevent duplicates
-	# 	new_tweets = api.search(q=topic, rpp=200)
+	# 	new_tweets = api.search(q=topic, rpp=200)	
 		
 	# 	#save most recent tweets
 	# 	alltweets.extend(new_tweets)
