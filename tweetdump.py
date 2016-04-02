@@ -17,7 +17,7 @@ def get_all_tweets(topic):
 	
 	#initialize a list to hold all the tweepy Tweets
 	alltweets = []	
-	
+	#ahmed was here
 	#make initial request for most recent tweets (200 is the maximum allowed count)
 	new_tweets = tweepy.Cursor(api.search, q=topic).items(200)
 	
