@@ -8,13 +8,21 @@
 	<title>Dalvonic</title>
 	<link href ="../static/css/dalvonic-style.css" rel= "stylesheet">
 	<link href = "../static/css/hexagons.css" rel= "stylesheet">
-	<!-- <script src="dalvonic-interactive.js"></script> -->
+	<script src="../static/js/dalvonic-interactive.js"></script>
 </head>
 <body class= "home">
 <h1>Dalvonic</h1>
 
 
-
+<script>
+for(var i=0; i<5; i++){
+	hexHeight = (50*i)+1;
+	for(var j=0; j<4; j++){
+		var hexWidth = (50*j)+1;
+		var hex = '<div class="hexagon position" style:"margin-left:'+ hexWidth+'px; margin-top:'+hexHeight+'px"><span></span></div>';
+		$('body').append(hex);
+	}
+}</script>
 
 <div class="hexagon position"><span></span></div>
 
