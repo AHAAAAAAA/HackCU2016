@@ -7,12 +7,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-	data = get_all_tweets('#Bahrain')
-	# tweets = sentimentAnalysis(data)
-	str = ''
-	for i in data:
-		str += i[2]+'\n'
-	return str
+	# data = get_all_tweets('#Bahrain')
+	# # tweets = sentimentAnalysis(data)
+	# str = ''
+	# for i in data:
+	# 	str += i[2]+'\n'
+	return render_template('dalvonic-home.html')
 
 @app.route('/signUp')
 def signUp():
