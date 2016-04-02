@@ -15,7 +15,7 @@
 	background-size:cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-attachment: fixed;
+	background-position: fixed;
 }
 
 h1{ 
@@ -24,9 +24,6 @@ h1{
 	left: -9999em;
  }
 
-header img {
-  text-align: center
-}
 
 .hexagon{
   width: 150px;
@@ -41,3 +38,48 @@ header img {
 .box-buffer{
   margin-top:40px;
 }
+
+.contain-buffer{
+  margin-top: 30px;
+  position: relative;
+}
+
+
+/*Graph CSS*/
+
+#cloud-scroll {
+width: 200px;
+height: 200px;
+background: url('../img/pattern.png') repeat-y;
+-webkit-animation: backgroundScroll 20s linear infinite;
+animation: backgroundScroll 20s linear infinite;
+}
+ 
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+ 
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
