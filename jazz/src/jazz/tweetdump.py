@@ -32,7 +32,7 @@ def get_all_tweets(topic):
 		print "getting tweets before %s" % (oldest)
 		
 		#all subsiquent requests use the max_id param to prevent duplicates
-		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest)
+		new_tweets = tweepy.Cursor(api.search, q=topic).items(200)
 		
 		#save most recent tweets
 		alltweets.extend(new_tweets)
