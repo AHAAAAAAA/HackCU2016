@@ -1,10 +1,19 @@
 import os
 from flask import Flask,render_template, request,json
+from tweetdump import *
+from sentAnalysi import *
 
 app = Flask(__name__)
+class tweet:
+	tweet   = ''
+	tweetId = ''
+	x       = 0
+	y       = 0
 
 @app.route('/')
 def hello():
+	data = get_all_tweets(anything)
+	tweets = sentimentAnalysis(data)
     return 'Welcome to Python Flask!'
 
 @app.route('/signUp')
