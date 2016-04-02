@@ -7,7 +7,7 @@ import csv
 from keys import *
 
 
-def get_all_tweets(screen_name):
+def get_all_tweets(topic):
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
