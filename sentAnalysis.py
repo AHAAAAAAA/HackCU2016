@@ -4,8 +4,17 @@ import codecs
 import csv
 import nltk
 
-def sentimentAnalysis():
-  
+class tweet:
+  tweet   = ''
+  tweetID = ''
+  x       = 0
+  y       = 0
+
+def sentimentAnalysis(data): #fill topicData with class tweet elements and return.
+  topicData = []
+  for i in data:
+    
+    
   
   
   
