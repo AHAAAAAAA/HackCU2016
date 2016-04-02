@@ -6,22 +6,28 @@ import nltk
 import json
 
 class tweet:
-  def __init__:
-    tweet   = ''
-    tweetID = ''
-    x       = 0
-    y       = 0
+  def __init__(self):
+    tweet     = ''
+    tId       = ''
+    x         = 0
+    y         = 0
+    user      = ''
+    createdAt = ''
+
+def preprocessTweets(data):
+  processed = []
+  for i in data:
+    tmp = tweet()
+    tmp.tweet     = i[0]
+    tmp.tId       = i[1]
+    tmp.y         = len(i[0])
+    tmp.user      = i[2]
+    tmp.createdAt = i[3]
+    processed.append(tweet)
+  return processed
 
 def sentimentAnalysis(data): #fill topicData with class tweet elements and return.
   topicData = []
-  for i in data:
-    new tweet temp
-    temp.tweet = 
-    temp.tweetID = 
-    temp.x = #nltk output
-    temp.y = 0
-    topicData.append(i)
-    
     
   
   
