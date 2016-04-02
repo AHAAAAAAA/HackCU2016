@@ -7,7 +7,7 @@ import csv
 from keys import *
 
 
-def get_all_tweets(screen_name):
+def get_all_tweets(topic):
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
@@ -19,7 +19,7 @@ def get_all_tweets(screen_name):
 	alltweets = []	
 	
 	#make initial request for most recent tweets (200 is the maximum allowed count)
-	new_tweets = api.user_timeline(screen_name = screen_name, count=200)
+	new_tweets = api.user_timeline(topic = topic, count=200)
 	
 	#save most recent tweets
 	alltweets.extend(new_tweets)
