@@ -19,7 +19,7 @@ def get_all_tweets(screen_name):
 	alltweets = []	
 	
 	#make initial request for most recent tweets (200 is the maximum allowed count)
-	new_tweets = api.user_timeline(screen_name = screen_name, count=200)
+	new_tweets = tweepy.Cursor(api.search, q='#Bahrain').items(200)
 	
 	#save most recent tweets
 	alltweets.extend(new_tweets)
