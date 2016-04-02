@@ -9,7 +9,9 @@ class tweet:
 	tweetId = ''
 	x       = 0
 	y       = 0
-
+#BAnaa
+def jafa():
+	print 'yellow'
 @app.route('/')
 def hello():
 	data = get_all_tweets(anything)
