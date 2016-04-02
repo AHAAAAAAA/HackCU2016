@@ -19,10 +19,25 @@
 }
 
 h1{ 
-	font-family: "manifestoregular";
-	font-size: 3em;
-	text-align: center;
-	margin-top: 50px;
+	position: absolute;
+	top: -9999em;  
+	left: -9999em;
  }
 
+header img {
+  text-align: center
+}
 
+.hexagon{
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  background-color:rgba(255,255,255, .4)
+}
+
+.top-buffer { 
+	margin-top:30px;
+}
+.box-buffer{
+  margin-top:40px;
+}

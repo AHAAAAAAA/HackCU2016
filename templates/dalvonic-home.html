@@ -5,28 +5,56 @@
 <head>
 	<meta charset = "utf-8">
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+	          
 	<title>Dalvonic</title>
 	<link href ="../static/css/dalvonic-style.css" rel= "stylesheet">
-	<link href = "../static/css/hexagons.css" rel= "stylesheet">
 	<script src="../static/js/dalvonic-interactive.js"></script>
 </head>
 <body class= "home">
-<h1>Dalvonic</h1>
 
-<div class="hexagon position"><span></span></div>
-<script>
-for(var i=0; i<5; i++){
-	var hexHeight = (50*i);
-	for(var j=0; j<4; j++){
-		var hexWidth = (50*j)+50;
-		var hex = '<div class="hexagon" style:"margin-left:'+ (269 + hexWidth) +'px !important; z-index:100; padding-top:'+ (100.269+hexHeight) +'px"><span></span></div>';
-		$('body').append(hex);
-	}
-}</script>
+<div class="">
+	<header class = "row container top-buffer">
+		<h1 class="move" style="display:none">Dalvonic</h1>
+		<img class= "col-s12 img-responsive center-block" src="../static/img/header.png">
+	</header>
 
-
-
-
+	<div class="container center box-buffer">
+		<div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+		</div>
+		<div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+		</div>
+		<div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+		</div>
+		<div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+			<div class="hexagon"><span></span></div>
+		</div>
+	</div>
 
 
 
