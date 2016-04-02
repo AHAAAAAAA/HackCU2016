@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'manifestoregular';
+    src: url('../fonts/manifesto-webfont.eot');
+    src: url('../fonts/manifesto-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/manifesto-webfont.woff2') format('woff2'),
+         url('../fonts/manifesto-webfont.woff') format('woff'),
+         url('../fonts/manifesto-webfont.ttf') format('truetype'),
+         url('../fonts/manifesto-webfont.svg#manifestoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.home{
+	background-image: url("../img/pattern.png");
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+h1{ 
+	font-family: "manifestoregular";
+	font-size: 3em;
+	text-align: center;
+	margin-top: 50px;
+ }
+
+
