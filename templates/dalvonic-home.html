@@ -13,18 +13,17 @@
 <body class= "home">
 <h1>Dalvonic</h1>
 
-
+<div class="hexagon position"><span></span></div>
 <script>
 for(var i=0; i<5; i++){
-	hexHeight = (50*i)+1;
+	var hexHeight = (50*i);
 	for(var j=0; j<4; j++){
-		var hexWidth = (50*j)+1;
-		var hex = '<div class="hexagon position" style:"margin-left:'+ hexWidth+'px; margin-top:'+hexHeight+'px"><span></span></div>';
+		var hexWidth = (50*j)+50;
+		var hex = '<div class="hexagon" style:"margin-left:'+ (269 + hexWidth) +'px !important; z-index:100; padding-top:'+ (100.269+hexHeight) +'px"><span></span></div>';
 		$('body').append(hex);
 	}
 }</script>
 
-<div class="hexagon position"><span></span></div>
 
 
 
