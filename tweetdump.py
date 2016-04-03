@@ -28,21 +28,21 @@ def get_all_tweets(topic):
 	#save the id of the oldest tweet less one
 	oldest = alltweets[-1].id - 1
 	
-	# #keep grabbing tweets until there are no tweets left to grab
-	# while len(new_tweets) > 0:
-	# 	#all subsiquent requests use the max_id param to prevent duplicates
-	# 	new_tweets = api.search(q=topic, rpp=200)	
+	#keep grabbing tweets until there are no tweets left to grab
+	while len(new_tweets) > 0:
+		#all subsiquent requests use the max_id param to prevent duplicates
+		new_tweets = api.search(q=topic, rpp=200)	
 		
-	# 	#save most recent tweets
-	# 	alltweets.extend(new_tweets)
+		#save most recent tweets
+		alltweets.extend(new_tweets)
 		
-	# 	#update the id of the oldest tweet less one
-	# 	oldest = alltweets[-1].id - 1
+		#update the id of the oldest tweet less one
+		oldest = alltweets[-1].id - 1
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
-	# outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.screen_name, tweet.created_at,] for tweet in alltweets]
+	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at,] for tweet in alltweets]
 	
-	return alltweets
+	return outtweets
 def trending_topics():
 	topics = []
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
