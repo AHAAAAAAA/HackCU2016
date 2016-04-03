@@ -98,7 +98,7 @@
 	</div>
 </div>		
 <script>
-	var dataSet = '{{ data }}';
+	var dataSet = JSON.parse('{{ data | tojson }}');
 	console.log(dataSet)
 	var formattedXY = []
 	for (var i = 0; i<dataSet.length; i++){
