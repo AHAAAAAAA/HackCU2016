@@ -23,7 +23,7 @@ def hi():
 	if user!='':
 		userTweets = get_user_tweets(user)
 		for i in userTweets:
-			if query is in i[0]:
+			if i[0].find(query)!= -1:
 				cleanUserTweets.append(i)
 
 
