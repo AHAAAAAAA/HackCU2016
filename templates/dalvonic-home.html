@@ -43,9 +43,10 @@
 			<img class= "col-s12 img-responsive center-block" src="../static/img/header.png" alt="header">
 		</header>
 
-		<div class= "navbox">
-			<input type="text" id="text1" placeholder="username"> 
-			<input type="text" id="text2" placeholder="your hashtag pick of the day"> 
+		<div class= "navbox row">
+			<input type="text" id="text1" class="col l5 m5 s5" placeholder="username">
+			<div class="blah" class="col l2 m2 s2" style="height:50px;width:50px;"></div>
+			<input type="text" id="text2" class="col l5 m5 s5" placeholder="your hashtag pick of the day"> 
 		</div>
 		<div id="wrapper">
 			<div class="box-buffer center box-buffer">
@@ -54,14 +55,17 @@
  
 		<script>
 			var data = JSON.parse('{{ data | tojson }}');
+			$('.blah').append("<a href='graph?q="$("#text1").val()+"&u="+$("#text2").val()+"class='btn-floating btn-large waves-effect waves-light red'><i class='material-icons'>add</i></a>");
 			        // do stuff with the data
 			        for (var i=1;i<=data.length;i++){
 			        	var tmp = data[i].replace('#','');
-			        	$('.box-buffer').append("<a href='graph?q="+tmp +"'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
-			        	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>");
+			        	$('.box-buffer').append("<a href='graph?q="+tmp +"&u=None'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
+			        	$('#'+i).append("<a href='graph?q="+tmp+"&u=None'>"+data[i]+"</a>");
 			        	$('head').append('<style type="text/css">body{background:#000;color:#fff}a,{a:visited{text-decoration:none;}</style>');
 			        	//code for passing u!!!!!!
 			        }
+
+
     	</script>
 	</div>
 
