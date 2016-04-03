@@ -12,6 +12,7 @@ def hello():
 	# str = ''
 	# for i in data:
 	# 	str += i[2]+'\n'
+	data = trending_topics()
 	return render_template('dalvonic-home.html', page_title='Dalvonic', data=data)
 
 @app.route('/signUp')

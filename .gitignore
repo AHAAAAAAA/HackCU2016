@@ -1,2 +1,5 @@
 keys.py
 keys.pyc
+*.pyc
+.DS_Store
+tweetdump.pyc

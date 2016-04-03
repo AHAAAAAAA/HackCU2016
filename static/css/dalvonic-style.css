@@ -10,12 +10,15 @@
     font-style: normal;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100);
+
 .home{
 	background-image: url("../img/pattern.png");
 	background-size:cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-position: fixed;
+  font-family: 'Lato', sans-serif;
 }
 
 h1{ 
@@ -24,15 +27,20 @@ h1{
 	left: -9999em;
  }
 
-
-.hexagon{
-  width: 150px;
-  height: 150px;
+p{
+    vertical-align: middle;
+    text-align: center;
+    margin: auto auto !important;
+    width: 80%;
+    height: 100%;
+}
+. card{
+  margin: 10px 10px;
   display: inline-block;
   background-color:rgba(255,255,255, .4)
 }
 
-.hexagon:hover{
+. card:hover{
   background-color:rgba(255,255,255, .8)
 }
 
