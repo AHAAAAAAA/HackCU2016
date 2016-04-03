@@ -77,8 +77,8 @@
 			</div>
 			<div class="parallax__layer parallax__layer--back"></div>
 			<div class="parallax__layer parallax__layer--base">
-				<div class="title">Here is where the graph could go :)</div>
-				<canvas id="myChart" width="400" height="400"></canvas>
+				<div class="title">A Visual display of your bias</div>
+				<canvas class="center" id="myChart" width="1200" height="500" style="z-index: 100 !important"></canvas>
 
 			</div>
 
@@ -105,45 +105,42 @@
 	for (var i = 0; i<dataSet.length; i++){
 		var tmp = JSON.parse("[" + dataSet[i] + "]");
 		// console.log(tmp)
-		formattedXY.push({x: tmp[0][5], y: tmp[0][2], r: tmp[0][2]/40})
+		var color = '#F16220'
+		if (tmp[0][5] == 'true'){ //user color is different
+			color =  '#FFC800'
+		}
+		formattedXY.push(
+		{ label: tmp[0][0],
+	      strokeColor: color,
+	      pointColor: color,
+	      pointStrokeColor: '#fff',
+	      data: [ 
+	      {x: (tmp[0][5] - 0.5) * 20, y: (1/tmp[0][2]*2000) * 140 + 30 * Math.random() , r: tmp[0][2]/40
+	      }
+	      ]
+      	})
 	}
-	// console.log(formattedXY);
-	var data = [
-    {
-      label: 'My First dataset',
-      strokeColor: '#F16220',
-      pointColor: '#F16220',
-      pointStrokeColor: '#fff',
-      data: formattedXY
-    }
-  ];
   	var options = {
-  		// SUPPORTED GLOBAL OPTIONS
-
-		// Boolean - If we should show the scale at all
-		showScale: true,
-
-		// String - Colour of the scale line
-		scaleLineColor: "rgba(0,0,0,.1)",
-
-		// Number - Pixel width of the scale line
-		scaleLineWidth: 1,
-
-		// Boolean - Whether to show labels on the scale
-		scaleShowLabels: true,
-
-		// Interpolated JS string - can access value
-		scaleLabel: "<%=value%>",
-
-		// Interpolated JS string - can access value
-		scaleArgLabel: "<%=value%>",
-
-		// String - Message for empty data
-		emptyDataMessage: "chart has no data",
-		datasetStroke: false,
-		  	}
+  				// Boolean - If we want to override with a hard coded x scale
+				xScaleOverride: true,
+				// ** Required if scaleOverride is true **
+				// Number - The number of steps in a hard coded x scale
+				xScaleSteps: 20,
+				// Number - The value jump in the hard coded x scale
+				xScaleStepWidth: 1,
+				// Number - The x scale starting value
+				xScaleStartValue: -10,
+				bezierCurve: true,
+				showTooltips: true,
+				scaleShowHorizontalLines: true,
+				scaleShowLabels: true,
+				scaleBeginAtZero: true,
+				datasetStroke: false,
+				scaleShowGridLines: false,
+				scaleGridLineColor: "rgb(255,255,255,1)"
+			};
 	var ctx = document.getElementById("myChart").getContext("2d");
-	new Chart(ctx).Scatter(data, options);
+	new Chart(ctx).Scatter(formattedXY, options);
 
 </script>
 </body>
