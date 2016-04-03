@@ -18,6 +18,10 @@ def hello():
 @app.route('/graph')
 def hi():
 	query =  '#'+request.args.get('q')
+	user =  request.args.get('u')
+	if user
+		#get user tweets related to query.
+	else
 	outTweets = get_all_tweets(query)
 	processedTweets = preprocessTweets(outTweets)
 	data = sentimentAnalysis(processedTweets)

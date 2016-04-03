@@ -8,7 +8,7 @@ import json
 from keys import *
 
 
-def get_all_tweets(topic):
+def get_all_tweets(topic): #could also be a user ID for user's tweets.
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
