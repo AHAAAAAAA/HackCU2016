@@ -20,17 +20,16 @@ def hi():
 	query =  '#'+request.args.get('q')
 	user =  request.args.get('u')
 	cleanUserTweets = []
-	if user!='':
+	if user!='None':
 		userTweets = get_user_tweets(user)
 		for i in userTweets:
-			if i[0].find(query)!= -1:
+			if i[0].decode("utf-8").find(query)!= -1:
 				cleanUserTweets.append(i)
 	outTweets = get_all_tweets(query)
-	outTweets.append(cleanUserTweets)
+	outTweets.extend(cleanUserTweets)
 
 	#searches throught user tweets and matches querys
-	processedTweets = preprocessTweets(outTweets)
-	data = sentimentAnalysis(processedTweets)
+	data = preprocessTweets(outTweets)
 	return render_template('graph.html', page_title='Graph', data=data)
 
 #call to tweetdump with topic hashtag input

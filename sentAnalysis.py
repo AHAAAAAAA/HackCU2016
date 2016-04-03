@@ -13,6 +13,7 @@ def preprocessTweets(data):
     tmp.append(len(i[0]))
     tmp.append(i[2])
     tmp.append(i[3])
+    tmp.append(i[-1])
     processed.append(tmp)
   return processed
 
