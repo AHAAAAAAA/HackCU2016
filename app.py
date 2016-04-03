@@ -23,12 +23,6 @@ def hi():
 	data = sentimentAnalysis(processedTweets)
 	return render_template('graph.html', page_title='Graph', data=data)
 
-@app.route('/signUpUser', methods=['POST'])
-def signUpUser():
-    user =  request.form['username'];
-    password = request.form['password'];
-    return json.dumps({'status':'OK','user':user,'pass':password});
-
 #call to tweetdump with topic hashtag input
 
 #pass tweetdump output to sentAnalysis
