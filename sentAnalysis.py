@@ -19,7 +19,7 @@ def preprocessTweets(data):
 def sentimentAnalysis(data): #fill topicData with class tweet elements and return.
   analysed = []
   for i in data:
-    i[2] = sentiment_score(i[0])
+    i.append(sentiment_score(i[0]))
     analysed.append(i)
   return analysed
 

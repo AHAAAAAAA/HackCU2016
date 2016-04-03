@@ -15,20 +15,15 @@ def get_all_tweets(topic):
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_key, access_secret)
 	api = tweepy.API(auth)
-	
-	#initialize a list to hold all the tweepy Tweets
 	alltweets = []	
+	if api.rate_limit_status()['resources']['search']['/search/tweets']['remaining']==0:
+		auth = tweepy.OAuthHandler(consumer_key2, consumer_secret2)
+		auth.set_access_token(access_key2, access_secret2)
+		api = tweepy.API(auth2)
+	#initialize a list to hold all the tweepy Tweets
 	#ahmed was here
 	#make initial request for most recent tweets (200 is the maximum allowed count)
-	page_count = 0  
-	for tweets in tweepy.Cursor(api.search, q=topic, count=100,
-                result_type="recent", include_entities=True).pages():  
-		page_count += 1  
-		# print just the first tweet out of every page of 100 tweets  
-		print tweets[0].text.encode('utf-8')  
-		if page_count >= 200:  
-			break
-	# new_tweets = tweepy.Cursor(api.search(q=topic)).items(200)
+	new_tweets = api.search(q=topic, rpp=200)
 	
 	#save most recent tweets
 	alltweets.extend(new_tweets)
@@ -48,9 +43,9 @@ def get_all_tweets(topic):
 	# 	oldest = alltweets[-1].id - 1
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
-	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at,] for tweet in alltweets]
-	
+	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at] for tweet in alltweets]
 	return outtweets
+
 def trending_topics():
 	topics = []
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)

@@ -41,8 +41,10 @@
 			<h1 class="move" style="display:none">Dalvonic</h1>
 			<img class= "col-s12 img-responsive center-block" src="../static/img/header.png" alt="header">
 		</header>
+
+
 		<div id="wrapper">
-			<div class="container center box-buffer">
+			<div class="box-buffer center box-buffer">
 
 			</div>
 
@@ -53,9 +55,9 @@
         	var tmp = data[i].replace('#','');
         	$('.container').append("<a href='graph?q="+tmp +"'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
         	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>");
+        	$('head').append('<style type="text/css">body{background:#000;color:#fff}a,a:visited{text-decoration:none;}</style>');
         }
     	</script>
-
 
 </div>
 </body>
