@@ -4,6 +4,8 @@ import codecs
 import csv
 import nltk
 import json
+from sentiment import sentiment_score
+print sentiment_score(u"I love you")
 
 class tweet:
   def __init__(self):
