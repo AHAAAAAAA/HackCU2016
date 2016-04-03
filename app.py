@@ -12,7 +12,7 @@ def hello():
 	# str = ''
 	# for i in data:
 	# 	str += i[2]+'\n'
-	return render_template('dalvonic-home.html')
+	return render_template('dalvonic-home.html', page_title='Dalvonic', data=data)
 
 @app.route('/signUp')
 def signUp():
@@ -23,6 +23,12 @@ def signUpUser():
     user =  request.form['username'];
     password = request.form['password'];
     return json.dumps({'status':'OK','user':user,'pass':password});
+
+#call to tweetdump with topic hashtag input
+
+#pass tweetdump output to sentAnalysis
+
+#Pass complete tweet topic info to front end for display.
 
 if __name__=="__main__":
     app.run(debug=True)

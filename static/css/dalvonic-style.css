@@ -32,6 +32,10 @@ h1{
   background-color:rgba(255,255,255, .4)
 }
 
+.hexagon:hover{
+  background-color:rgba(255,255,255, .8)
+}
+
 .top-buffer { 
 	margin-top:30px;
 }

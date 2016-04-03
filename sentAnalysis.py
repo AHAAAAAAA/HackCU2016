@@ -2,32 +2,29 @@
 import tweepy #https://github.com/tweepy/tweepy
 import codecs
 import csv
-import nltk
 import json
-
-class tweet:
-  def __init__(self):
-    tweet     = ''
-    tId       = ''
-    x         = 0
-    y         = 0
-    user      = ''
-    createdAt = ''
-
+from sentiment import sentiment_score
 def preprocessTweets(data):
   processed = []
   for i in data:
-    tmp = tweet()
-    tmp.tweet     = i[0]
-    tmp.tId       = i[1]
-    tmp.y         = len(i[0])
-    tmp.user      = i[2]
-    tmp.createdAt = i[3]
-    processed.append(tweet)
+    tmp = []
+    tmp.append(i[0].decode("utf-8"))
+    tmp.append(i[1])
+    tmp.append(len(i[0]))
+    tmp.append(i[2])
+    tmp.append(i[3])
+    processed.append(tmp)
   return processed
 
 def sentimentAnalysis(data): #fill topicData with class tweet elements and return.
-  topicData = []
+  analysed = []
+  for i in data:
+    i[2] = sentiment_score(i[0])
+    analysed.append(i)
+  return analysed
+
+
+
     
   
   
