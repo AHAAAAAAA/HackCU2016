@@ -24,5 +24,11 @@ def signUpUser():
     password = request.form['password'];
     return json.dumps({'status':'OK','user':user,'pass':password});
 
+#call to tweetdump with topic hashtag input
+
+#pass tweetdump output to sentAnalysis
+
+#Pass complete tweet topic info to front end for display.
+
 if __name__=="__main__":
     app.run(debug=True)

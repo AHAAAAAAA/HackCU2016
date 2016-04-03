@@ -8,4 +8,4 @@ nltk.download('twitter_samples')
 nltk.download('punkt')
 sentences = ['Fuck this', 'I love you']
 pos_score, neg_score = senti_classifier.polarity_scores(sentences)
-print pos_score, neg_score
+print (pos_score, neg_score)
