@@ -21,7 +21,7 @@ def hi():
 	query =  '#'+request.args.get('q')
 	user =  ''+request.args.get('u')
 	cleanUserTweets = []
-	if user!='':
+	if user!='None':
 		userTweets = get_user_tweets(user)
 		for i in userTweets:
 			if i[0].decode("utf-8").find(query)!= -1:
