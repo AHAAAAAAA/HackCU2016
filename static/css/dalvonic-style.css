@@ -22,18 +22,26 @@ h1{
     width: 80%;
     height: 100%;
 }
-a:link{
+a:link,a:hover{
   color:black;
+  text-decoration: none;
+}
+a:visited{
+  color:green;
 }
 
 .box{
   margin: 10px 10px;
   display: inline-block;
-  background-color:rgba(255,255,255, .8)
+  background-color:rgba(255,255,255, .5)
 }
 
 .box:hover{
-  background-color:rgba(255,255,255, .8)
+  background-color:rgba(255,255,255, .8 )
+}
+
+.move{
+  padding: 10%;
 }
 
 .top-buffer { 
@@ -43,9 +51,9 @@ a:link{
   margin-top:40px;
 }
 
-.contain-buffer{
-  margin-top: 30px;
-  position: relative;
+.container{
+  padding-top: 15px;
+  width:60%;
 }
 
 .paragraph{
@@ -59,7 +67,7 @@ a:link{
 p{
  font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: .7em;
+  font-size: .8em;
   text-align: vertical;
 
 }

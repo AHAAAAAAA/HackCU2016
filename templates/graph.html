@@ -15,6 +15,7 @@
 	<script src="../static/js/dalvonic-interactive.js"></script>
 	<link href ="../static/css/clouds.css" rel= "stylesheet">
 	<link href="../static/css/parallax.css" rel="stylesheet">	
+	<link href="../static/css/parallax-stars.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -43,21 +44,14 @@
 
 			<div id="group2" class="parallax__group">
 				<div class="parallax__layer parallax__layer--base">
-				<div container>
-				<div class="row">
-						<div class="col s12 m12 l12">
-							<div class="icon-block">
-								<h2 class="center black-text"><i class="material-icons">info_outline</i></h2>
-								<h5 class="center">What are we doing?</h5>
-							</div>
+					<div container>
+
+						<div class="row move">
+							<p class="col-lg-6 col-md-6 col-sm-6"> With the explosion of the Internet, the dissemination of information and opinion has been democratized significantly. Opposed to a top-down information flow, there's now a bidirectional flow. Tools like Twitter, FB, and other services have served to empower activists and regular people to challenge the state and media narratives that are the primary opponents of free speech. Through our team's experiences with information wars and censorship in the Middle East, US, and Central America, we've identified the remaining challenges to freedom of speech to be three-fold: self-censorship, lack of decent Internet access, and echo chambers.</p>
+
+							<p class=" col-lg-6 col-md-6 col-sm-6"> We chose to tackle the problem of echo chambers and, particularly, in-grouping. Despite the onslaught of massive amounts of information, services like Twitter, Reddit, Facebook,  and other blogging services are highly personalized. Through social network graph analyses, it's very strongly evident that people follow and remain exclusively in the company of very like-minded individuals online. We aim to expose users to people who share opposing views to them and prompt users to consider information from ulterior, opposing sources based on sentimental and subjectivity analysis of their tweets (with a CNN classifier).</p>
 						</div>
 					</div>
-				<div class="row">
-					<p class="col-lg-6 col-md-6 col-sm-6"> With the explosion of the Internet, the dissemination of information and opinion has been democratized significantly. Opposed to a top-down information flow, there's now a bidirectional flow. Tools like Twitter, FB, and other services have served to empower activists and regular people to challenge the state and media narratives that are the primary opponents of free speech. Through our team's experiences with information wars and censorship in the Middle East, US, and Central America, we've identified the remaining challenges to freedom of speech to be three-fold: self-censorship, lack of decent Internet access, and echo chambers.</p>
-
-					<p class=" col-lg-6 col-md-6 col-sm-6"> We chose to tackle the problem of echo chambers and, particularly, in-grouping. Despite the onslaught of massive amounts of information, services like Twitter, Reddit, Facebook,  and other blogging services are highly personalized. Through social network graph analyses, it's very strongly evident that people follow and remain exclusively in the company of very like-minded individuals online. Despite the availability of information, people continue to fall into their in-grouping tendencies and become even more biased. We aim to expose users to people who share opposing views to them and prompt users to consider information from ulterior, opposing sources based on sentimental and subjectivity analysis of their tweets (with a CNN classifier).</p>
-				</div>
-				</div>
 				</div>
 
 				<div class="parallax__layer  parallax__layer--fore">
@@ -76,7 +70,16 @@
 
 		<div id="group3" class="parallax__group">
 			<div class="parallax__layer parallax__layer--fore">
-
+				<div id='stars'></div>
+				<div id='stars2'></div>
+				<div id='stars3'></div>
+				<div id='title'>
+					<span>
+					</span>
+					<br>
+					<span>
+					</span>
+				</div>
 			</div>
 			<div class="parallax__layer parallax__layer--back"></div>
 			<div class="parallax__layer parallax__layer--base"></div>
@@ -102,8 +105,8 @@
 	</div>
 </div>		
 <script>
-var data = '{{ data | tojson }}';
-console.log(data)
+	var data = '{{ data | tojson }}';
+	console.log(data)
 </script>
 
 </body>
@@ -115,16 +118,7 @@ console.log(data)
 
 
 
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<div id='title'>
-  <span>
-  </span>
-  <br>
-  <span>
-  </span>
-</div>
+
 
 
 
