@@ -19,7 +19,11 @@ def get_all_tweets(topic): #could also be a user ID for user's tweets.
 	if api.rate_limit_status()['resources']['search']['/search/tweets']['remaining']==0:
 		auth = tweepy.OAuthHandler(consumer_key2, consumer_secret2)
 		auth.set_access_token(access_key2, access_secret2)
-		api = tweepy.API(auth2)
+		api = tweepy.API(auth)
+	if api.rate_limit_status()['resources']['search']['/search/tweets']['remaining']==0:
+		auth = tweepy.OAuthHandler(consumer_key3, consumer_secret3)
+		auth.set_access_token(access_key3, access_secret3)
+		api = tweepy.API(auth)
 	#initialize a list to hold all the tweepy Tweets
 	#ahmed was here
 	#make initial request for most recent tweets (200 is the maximum allowed count)
