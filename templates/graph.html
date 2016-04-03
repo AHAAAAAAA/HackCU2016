@@ -100,13 +100,13 @@
 			
 <script>
 	var dataSet = {{ data | safe }};
-	// console.log(datataSet);
+	console.log(dataSet);
 	var formattedXY = [];
 	for (var i = 0; i<dataSet.length; i++){
 		var tmp = JSON.parse("[" + dataSet[i] + "]");
 		// console.log(tmp)
 		var color = '#F16220'
-		if (tmp[0][5] == 'true'){ //user color is different
+		if (tmp[0][4] == "true"){ //user color is different
 			color =  '#FFC800'
 		}
 		formattedXY.push(
