@@ -12,7 +12,7 @@ from tweetdump import *
 # # pos_score, neg_score = senti_classifier.polarity_scores(sentences)
 # # print pos_score, neg_score
 
-data =  trending_topics()
+data =  get_all_tweets('#jack')
 # for i in data:
 	# print i
 print data
