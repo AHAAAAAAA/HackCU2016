@@ -47,33 +47,6 @@ h1{
 
 /*Graph CSS*/
 
-#cloud-scroll {
-width: 200px;
-height: 200px;
-background: url('../img/pattern.png') repeat-y;
--webkit-animation: backgroundScroll 20s linear infinite;
-animation: backgroundScroll 20s linear infinite;
-}
- 
-@-webkit-keyframes backgroundScroll {
-from {background-position: 0 0;}
-to {background-position: -400px 0;}
-}
- 
-@keyframes backgroundScroll {
-from {background-position: 0 0;}
-to {background-position: -400px 0;}
-}
-
-
-
-
-
-
-
-
-
-
 
 
 

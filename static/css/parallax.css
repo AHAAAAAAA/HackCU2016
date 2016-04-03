@@ -1,0 +1,477 @@
+/* Parallax base styles
+  --------------------------------------------- */
+.parallax {
+  height: 500px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+
+.parallax__group {
+  position: relative;
+  height: 500px;
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(0.7);
+  transform: translateZ(90px) scale(0.7);
+  z-index: 1;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+}
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+}
+
+/* styles
+--------------------------------------------- */
+body, html {
+  overflow: hidden;
+}
+
+body {
+  font: 100% / 1.5 Arial;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parallax {
+  font-size: 200%;
+}
+
+/* centre the content in the parallax layers */
+.title1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  opacity: 0.5;
+  color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  opacity: 0.5;
+  color: tomato;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.title2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6em;
+  opacity: 0.5;
+  color: tomato;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.tea {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  opacity: 0.5;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.fox {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4em;
+  opacity: 0.5;
+  color: white;
+  position: absolute;
+  left: 80%;
+  top: 89%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.fox2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1em;
+  color: white;
+  position: absolute;
+  left: 25%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.fox3 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: .8em;
+  color: white;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#5am h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  opacity: 0.5;
+  color: tomato;
+  position: absolute;
+  left: 20%;
+  top: 50%;
+}
+
+#sun img {
+  position: absolute;
+  left: 64%;
+  top: 2%;
+}
+
+#cloud img {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  opacity: 0.7;
+}
+
+#cloud2 img {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  opacity: 0.5;
+}
+
+#cloud3 img {
+  position: absolute;
+  left: 43%;
+  top: 20%;
+  opacity: 0.8;
+}
+
+#cloud4 img {
+  position: absolute;
+  top: 50%;
+}
+
+#cloud5 img {
+  position: absolute;
+  left: 90%;
+  top: 1%;
+  opacity: 0.6;
+}
+
+#bird1 {
+  position: absolute;
+  left: 60%;
+  top: 10%;
+}
+
+#bird2 {
+  position: absolute;
+  left: 25%;
+  top: 75%;
+}
+
+#racoon img {
+  position: absolute;
+  left: 80%;
+  top: 20%;
+}
+
+#chipmunk img {
+  position: absolute;
+  left: 80%;
+  top: 60%;
+}
+
+#teapot img {
+  position: absolute;
+  opacity: .8;
+  left: 50%;
+  top: 30%;
+}
+
+.tea {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size:2em;
+    opacity:0.5;
+    color:white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+#rabbit {
+    position: absolute;
+  left: 2%;
+  top: 15%;
+  opacity:0.8;
+  }
+
+#berry {
+position: absolute;
+  left: 70%;
+  top: 50%;
+  opacity:0.7;
+  }
+
+.end    {font-family: 'Playfair Display', serif;
+    font-size:3em;
+    opacity:0.5;
+    text-align: center;
+    color:white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);}
+
+    .sleep {
+      font-family: 'Playfair Display', serif;
+    font-size:1.6em;
+    opacity:0.5;
+    text-align: center;
+    color:white;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+
+     .rise {
+      font-family: 'Playfair Display', serif;
+    font-size:1.3em;
+    opacity:0.5;
+    text-align: center;
+    color:white;
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+
+    #moon{
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity:0.7;
+    }
+
+    #star{position: absolute;
+  left: 70%;
+  top: 0%;
+  opacity:0.7;
+  }
+}
+
+    #star1{position: absolute;
+  left: 40%;
+  top: 50%;
+  opacity:0.7;
+  }
+
+#star2{
+position: absolute;
+  left: 20%;
+  top: 60%;
+  opacity:0.7;
+  }
+
+#star3 {position: absolute;
+  left: 12%;
+  top: 30%;
+  opacity:0.7;
+  }
+
+#star4{
+position: absolute;
+  left: 80%;
+  top: 60%;
+  opacity:0.7;
+  }
+
+#star5 {position: absolute;
+  left: 90%;
+  top: 30%;
+  opacity:0.7;
+  }
+
+#star6{
+position: absolute;
+  left: 93%;
+  top: 50%;
+  opacity:0.7;
+  }
+
+#star7{position: absolute;
+  left: 88%;
+  top: 30%;
+  opacity:0.7;
+  }
+
+#star8{
+position: absolute;
+  left: 73%;
+  top: 60%;
+  opacity:0.7;
+  }
+
+#star9 {position: absolute;
+  left: 83%;
+  top: 60%;
+  opacity:0.7;
+  }
+
+/* style the groups
+--------------------------------------------- */
+#group1 {
+  z-index: 5;
+  /* slide over group 2 */
+}
+
+#group1 .parallax__layer--base {
+  /*background: url("../img/bg1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;*/
+
+
+}
+
+#group2 {
+  z-index: 3;
+  /* slide under groups 1 and 3 */
+}
+
+#group2 .parallax__layer--back{
+	background: yellow;
+}
+
+
+
+#group3 {
+  z-index: 4;
+  /* slide over group 2 and 4 */
+}
+
+#group3 .parallax__layer--base {
+	padding: 100px 0;
+	background: rgba(255, 246, 159, 0.62);
+	background: -webkit-linear-gradient(top, rgba(255, 246, 159, 0.62),  #4F8199 100%);
+	background: -linear-gradient(top, rgba(255, 246, 159, 0.62),  #4F8199 100%);
+	background: -moz-linear-gradient(top, rgba(255, 246, 159, 0.62),  #4F8199 100%);
+}
+
+#group4 {
+  z-index: 2;
+  /* slide under group 3 and 5 */
+}
+
+#group4 .parallax__layer--deep {
+  	padding: 100px 0;
+	background: rgba(0,0,0);
+	background: -webkit-linear-gradient(top, rgb(0, 0, 0), rgba(8, 58, 148, 0.93) 100%);
+	background: -linear-gradient(top, rgb(0, 0, 0), rgba(8, 58, 148, 0.93) 100%);
+	background: -moz-linear-gradient(top, rgb(0, 0, 0), rgba(8, 58, 148, 0.93) 100%);
+}
+#group4 .parallax__layer--back {
+	padding: 100px 0;
+	background: rgba(230,82,55.3);
+	background: -webkit-linear-gradient(top, rgba(20, 71, 143, 0.78) 100%, #072042 100%);
+	background: -linear-gradient(top, rgba(20, 71, 143, 0.78) 100%, #072042 100%);
+	background: -moz-linear-gradient(top, rgba(20, 71, 143, 0.78) 100%, #072042 100%)
+}
+#group5 {
+  z-index: 3;
+  /* slide over group 4 and 6 */
+}
+
+#group5 .parallax__layer--base {
+  background: #1B3442;
+}
+
+#group6 {
+  z-index: 2;
+  /* slide under group 5 and 7 */
+}
+
+#group6 .parallax__layer--back {
+  background-color:#1B3442;
+}
+
+#group7 {
+  z-index: 3;
+  /* slide over group 7 */
+}
+
+#group7 .parallax__layer--base {
+   background-color:#1B3442;
+ 
+}
+
+/* misc
+  --------------------------------------------- */
+.demo__info {
+  position: absolute;
+  z-index: 100;
+  bottom: 1vh;
+  top: auto;
+  font-size: 80%;
+  text-align: center;
+  width: 100%;
+}
