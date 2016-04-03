@@ -17,7 +17,9 @@ def hello():
 
 @app.route('/graph')
 def signUp():
-    return render_template('graph.html')
+	url = request.path
+
+    return url
 
 @app.route('/signUpUser', methods=['POST'])
 def signUpUser():
