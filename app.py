@@ -19,10 +19,18 @@ def hello():
 def hi():
 	query =  '#'+request.args.get('q')
 	user =  request.args.get('u')
-	if user
-		#get user tweets related to query.
-	else
+	cleanUserTweets = []
+	if user!='':
+		userTweets = get_user_tweets(user)
+		for i in userTweets:
+			if query is in i[0]:
+				cleanUserTweets.append(i)
+
+
 	outTweets = get_all_tweets(query)
+	outTweets.append(cleanUserTweets)
+
+	#searches throught user tweets and matches querys
 	processedTweets = preprocessTweets(outTweets)
 	data = sentimentAnalysis(processedTweets)
 	return render_template('graph.html', page_title='Graph', data=data)

@@ -3,7 +3,7 @@ import codecs
 import csv
 import json
 
-def get_all_tweets(screen_name):
+def get_last_20_tweets(screen_name):
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
