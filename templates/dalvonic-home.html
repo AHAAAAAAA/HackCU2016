@@ -112,7 +112,8 @@
 			var data = JSON.parse('{{ data | tojson }}');
         // do stuff with the data
         for (var i=1;i<=20;i++){
-        	$('#'+i).append("<a href='graph?"+data[i]+"'>"+data[i]+"</a>")
+        	var tmp = data[i].replace('#','');
+        	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>")
         }
     </script>
 

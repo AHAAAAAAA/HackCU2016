@@ -1,5 +1,5 @@
 import os
-from flask import Flask,render_template, request,json
+from flask import Flask,render_template, request, json
 from tweetdump import *
 # from sentAnalysi import *
 
@@ -16,10 +16,10 @@ def hello():
 	return render_template('dalvonic-home.html', page_title='Dalvonic', data=data)
 
 @app.route('/graph')
-def signUp():
-	url = request.path
-
-    return url
+def hi():
+	query =  '#'+request.args.get('q')
+	
+	return url
 
 @app.route('/signUpUser', methods=['POST'])
 def signUpUser():
