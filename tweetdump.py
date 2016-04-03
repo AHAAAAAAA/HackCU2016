@@ -46,7 +46,7 @@ def get_all_tweets(topic): #could also be a user ID for user's tweets.
 	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at, 'false'] for tweet in alltweets]
 	return outtweets
 
-def get_user_tweets(user): #could also be a user ID for user's tweets.
+def get_user_tweets(screen_name): #could also be a user ID for user's tweets.
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
@@ -61,7 +61,7 @@ def get_user_tweets(user): #could also be a user ID for user's tweets.
 	#initialize a list to hold all the tweepy Tweets
 	#ahmed was here
 	#make initial request for most recent tweets (200 is the maximum allowed count)
-	new_tweets = api.search(q=user, rpp=200)
+	new_tweets = api.user_timeline(screen_name = screen_name,count=200)
 	
 	#save most recent tweets
 	alltweets.extend(new_tweets)
