@@ -19,9 +19,9 @@ def hello():
 @app.route('/graph')
 def hi():
 	query =  '#'+request.args.get('q')
-	user =  request.args.get('u')
+	user =  ''+request.args.get('u')
 	cleanUserTweets = []
-	if user!='None':
+	if user!='':
 		userTweets = get_user_tweets(user)
 		for i in userTweets:
 			if i[0].decode("utf-8").find(query)!= -1:
