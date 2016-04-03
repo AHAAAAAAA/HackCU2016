@@ -104,7 +104,7 @@
 	for (var i = 0; i<dataSet.length; i++){
 		var tmp = JSON.parse("[" + dataSet[i] + "]");
 		// console.log(tmp)
-		formattedXY.push({x: tmp[0][5], y: tmp[0][2]})
+		formattedXY.push({x: tmp[0][5], y: tmp[0][2], r: tmp[0][2]/40})
 	}
 	// console.log(formattedXY);
 	var data = [
