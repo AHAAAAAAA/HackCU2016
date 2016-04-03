@@ -43,7 +43,7 @@ def get_all_tweets(topic): #could also be a user ID for user's tweets.
 	# 	oldest = alltweets[-1].id - 1
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
-	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at, False] for tweet in alltweets]
+	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at, 'false'] for tweet in alltweets]
 	return outtweets
 
 def get_user_tweets(user): #could also be a user ID for user's tweets.
@@ -81,7 +81,7 @@ def get_user_tweets(user): #could also be a user ID for user's tweets.
 	# 	oldest = alltweets[-1].id - 1
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
-	outtweets = [[tweet.text.encode("utf-8"), tweet.id_str, tweet.author._json['screen_name'], tweet.created_at, True] for tweet in alltweets]
+	outtweets = [[tweet.text, tweet.id_str.encode('utf-8'), tweet.author._json['screen_name'].encode('utf-8'), tweet.created_at, "true".encode('utf-8')] for tweet in alltweets]
 	return outtweets
 
 def trending_topics():
