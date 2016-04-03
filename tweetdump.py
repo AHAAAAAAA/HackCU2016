@@ -49,7 +49,7 @@ def trending_topics():
 	auth.set_access_token(access_key, access_secret)
 	api = tweepy.API(auth)
 	#2367231
-	loc = json.dumps(api.trends_closest(40.014828, -105.258176))
+	loc = json.load(api.trends_closest(40.014828, -105.258176))
 	return loc
 
 	trends = api.trends_place(id="23424753")
