@@ -1,12 +1,7 @@
 <!doctype html>
 
 <html lang = "en">
-<style>
-.card {
-	padding:5px 5px 5px 5px;
-	background-color: rgb(255,255,255,0.2) !important;
-}
-</style>
+
 <head>
 	<meta charset = "utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -17,6 +12,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 	<link href="../static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+	<!-- Personal CSS -->
 	<link rel="stylesheet" href="../static/css/animate.css">
 	<link rel="stylesheet" href="../static/css/bootstrap.css">
 	<link rel="stylesheet" href="../static/css/style.css">
@@ -36,87 +33,28 @@
 	<link href ="../static/css/dalvonic-style.css" rel= "stylesheet">
 	<script src="../static/js/dalvonic-interactive.js"></script>
 </head>
+
+
 <body class= "home">
 	<div class="scroll-container">
 		<header class = "row container top-buffer span3">
 			<h1 class="move" style="display:none">Dalvonic</h1>
-			<img class= "col-s12 img-responsive center-block" src="../static/img/header.png">
+			<img class= "col-s12 img-responsive center-block" src="../static/img/header.png" alt="header">
 		</header>
 		<div id="wrapper">
 			<div class="container center box-buffer">
-				<div class="row">
-					<div  class=" card col l3 m3 s3"><span><p id="1"></p></span></div>
-					<div  class=" card col l3 m3 s3"><span><p id="2"></p></span></div>
-					<div  class=" card col l3 m3 s3"><span><p id="3"></p></span></div>
-					<div  class=" card col l3 m3 s3"><span><p id="4"></p></span></div>
-
-				</div>
-				<div class="row">
-					<div class=" card col l3 m3 s3"><span><p id="5"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="6"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="7"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="8"></p></span></div>
-
-				</div>
-				<div class="row">
-					<div class=" card col l3 m3 s3"><span><p id="9"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="10"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="11"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="12"></p></span></div>
-				</div>
-				<div class="row">
-					<div class=" card col l3 m3 s3"><span><p id="13"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="14"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="15"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="16"></p></span></div>
-
-				</div>
-				<div class="row">
-					<div class=" card col l3 m3 s3"><span><p id="17"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="18"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="19"></p></span></div>
-					<div class=" card col l3 m3 s3"><span><p id="20"></p></span></div>
-				</div>
 
 			</div>
-
-			<div class="" style="padding-top: 2%; ">
-				<div class="section">
-
-					<!--   Icon Section   -->
-					<div class="row">
-						<div class="col s12 m12 l12">
-							<div class="icon-block">
-								<h2 class="center black-text"><i class="material-icons">info_outline</i></h2>
-								<h5 class="center">What are we doing?</h5>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="row container">
-						<div class="col s6 m6 l6 container">
-							<p class="light"> With the explosion of the Internet, the dissemination of information and opinion has been democratized significantly. Opposed to a top-down information flow, there's now a bidirectional flow. Tools like Twitter, FB, and other services have served to empower activists and regular people to challenge the state and media narratives that are the primary opponents of free speech. Through our team's experiences with information wars and censorship in the Middle East, US, and Central America, we've identified the remaining challenges to freedom of speech to be three-fold: self-censorship, lack of decent Internet access, and echo chambers. 
-							</p>
-						</div>
-						<div class="col s6 m6 l6 container">
-							<p class="light"> We chose to tackle the problem of echo chambers and, particularly, in-grouping. Despite the onslaught of massive amounts of information, services like Twitter, Reddit, Facebook,  and other blogging services are highly personalized. Through social network graph analyses, it's very strongly evident that people follow and remain exclusively in the company of very like-minded individuals online. Despite the availability of information, people continue to fall into their in-grouping tendencies and become even more biased. We aim to expose users to people who share opposing views to them and prompt users to consider information from ulterior, opposing sources based on sentimental and subjectivity analysis of their tweets (with a CNN classifier).  </p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-
 
 		<script>
 			var data = JSON.parse('{{ data | tojson }}');
         // do stuff with the data
-        for (var i=1;i<=20;i++){
+        for (var i=1;i<=data.length;i++){
         	var tmp = data[i].replace('#','');
-        	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>")
+        	$('.container').append("<a href='graph?q="+tmp +"'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
+        	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>");
         }
-    </script>
+    	</script>
 
 
 </div>

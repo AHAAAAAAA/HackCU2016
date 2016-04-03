@@ -15,20 +15,24 @@ h1{
 	left: -9999em;
  }
 
-p{
+.text{
     vertical-align: middle;
     text-align: center;
     margin: auto auto !important;
     width: 80%;
     height: 100%;
 }
-. card{
-  margin: 10px 10px;
-  display: inline-block;
-  background-color:rgba(255,255,255, .4)
+a:link{
+  color:black;
 }
 
-. card:hover{
+.box{
+  margin: 10px 10px;
+  display: inline-block;
+  background-color:rgba(255,255,255, .8)
+}
+
+.box:hover{
   background-color:rgba(255,255,255, .8)
 }
 
@@ -57,6 +61,6 @@ p{
   font-weight: 300;
   font-size: .7em;
   text-align: vertical;
-  
+
 }
 
