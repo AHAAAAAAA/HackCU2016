@@ -12,7 +12,7 @@ def hello():
 	# str = ''
 	# for i in data:
 	# 	str += i[2]+'\n'
-	return render_template('dalvonic-home.html')
+	return render_template('dalvonic-home.html', page_title='Dalvonic', data=data)
 
 @app.route('/signUp')
 def signUp():

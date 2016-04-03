@@ -4,7 +4,6 @@ import codecs
 import csv
 import json
 from sentiment import sentiment_score
-
 class tweet:
   def __init__(self):
     tweet     = ''
