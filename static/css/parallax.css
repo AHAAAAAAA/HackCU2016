@@ -12,6 +12,7 @@
   perspective: 300px;
 }
 
+
 .parallax__group {
   position: relative;
   height: 500px;
@@ -137,6 +138,7 @@ body, html {
 
 
 #group2 .parallax__layer--back{
+  background: #002D48;
 }
 
 

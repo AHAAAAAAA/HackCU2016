@@ -100,13 +100,15 @@
 </div>
 			
 <script>
-	var dataSet = JSON.parse('{{ data | tojson }}');
-	console.log(dataSet)
-	var formattedXY = []
+	var dataSet = {{ data | safe }};
+	// console.log(datataSet);
+	var formattedXY = [];
 	for (var i = 0; i<dataSet.length; i++){
-		formattedXY.push({x: dataSet[i][5], y:dataSet[i][2]})
+		var tmp = JSON.parse("[" + dataSet[i] + "]");
+		// console.log(tmp)
+		formattedXY.push({x: tmp[0][5], y: tmp[0][2], r: tmp[0][2]/40})
 	}
-	console.log(dataSet.length);
+	// console.log(formattedXY);
 	var data = [
     {
       label: 'My First dataset',
@@ -138,7 +140,8 @@
 		scaleArgLabel: "<%=value%>",
 
 		// String - Message for empty data
-		emptyDataMessage: "chart has no data"
+		emptyDataMessage: "chart has no data",
+		datasetStroke: false,
 		  	}
 	var ctx = document.getElementById("myChart").getContext("2d");
 	new Chart(ctx).Scatter(data, options);

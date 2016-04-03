@@ -1,5 +1,5 @@
 import os
-from flask import Flask,render_template, request, json
+from flask import Flask,render_template, request, jsonify
 from tweetdump import *
 from sentAnalysis import *
 import json
@@ -28,16 +28,23 @@ def hi():
 				cleanUserTweets.append(i)
 	outTweets = get_all_tweets(query)
 	outTweets.extend(cleanUserTweets)
-
 	#searches throught user tweets and matches querys
 	data = preprocessTweets(outTweets)
-	return render_template('graph.html', page_title='Graph', data=data)
-
+	return render_template('graph.html', page_title='Dalvonic', data=map(json.dumps, data))
 #call to tweetdump with topic hashtag input
 
 #pass tweetdump output to sentAnalysis
 
 #Pass complete tweet topic info to front end for display.
-
+def byteify(input):
+    if isinstance(input, dict):
+        return {byteify(key): byteify(value)
+                for key, value in input.iteritems()}
+    elif isinstance(input, list):
+        return [byteify(element) for element in input]
+    elif isinstance(input, unicode):
+        return input.encode('utf-8')
+    else:
+        return input
 if __name__=="__main__":
     app.run(debug=True)
