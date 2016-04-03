@@ -45,7 +45,7 @@
 
 		<div class= "navbox row">
 			<input type="text" id="text1" class="col l5 m5 s5" placeholder="username">
-			<div class="blah" class="col l2 m2 s2" style="height:50px;width:50px;"></div>
+			<div class ="col l2 m2 s2" ><a class="blah"><i class='material-icons '>add</i></a></div>
 			<input type="text" id="text2" class="col l5 m5 s5" placeholder="your hashtag pick of the day"> 
 		</div>
 		<div id="wrapper">
@@ -55,7 +55,13 @@
  
 		<script>
 			var data = JSON.parse('{{ data | tojson }}');
-			$('.blah').append("<a href='graph?q="$("#text1").val()+"&u="+$("#text2").val()+"class='btn-floating btn-large waves-effect waves-light red'><i class='material-icons'>add</i></a>");
+			$( document ).ready(function() {
+			$('.blah').attr('href', "graph?q="+$('#text1').val()+"&u="+$("#text2").val())
+});			
+			$( ".blah" ).click(function() {
+				$('.blah').attr('href', "graph?q="+$('#text1').val()+"&u="+$("#text2").val())
+});
+			// $('.blah').attr("<a href='graph?q="$("#text1").val()+"&u="+$("#text2").val()+"class='btn-floating btn-large waves-effect waves-light red'><i class='material-icons'>add</i></a>");
 			        // do stuff with the data
 			        for (var i=1;i<=data.length;i++){
 			        	var tmp = data[i].replace('#','');
