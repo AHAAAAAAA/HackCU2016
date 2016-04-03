@@ -1,7 +1,7 @@
 import os
 from flask import Flask,render_template, request, json
 from tweetdump import *
-# from sentAnalysi import *
+from sentAnalysis import *
 
 app = Flask(__name__)
 
@@ -18,8 +18,10 @@ def hello():
 @app.route('/graph')
 def hi():
 	query =  '#'+request.args.get('q')
-	
-	return url
+	outTweets = get_all_tweets(query)
+	processedTweets = preprocessTweets(outTweets)
+	data = sentimentAnalysis(processedTweets)
+	return render_template('graph.html', page_title='Graph', data=data)
 
 @app.route('/signUpUser', methods=['POST'])
 def signUpUser():
