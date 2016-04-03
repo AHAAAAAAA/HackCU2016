@@ -16,6 +16,8 @@
 	<link href ="../static/css/clouds.css" rel= "stylesheet">
 	<link href="../static/css/parallax.css" rel="stylesheet">	
 	<link href="../static/css/parallax-stars.css" rel="stylesheet">
+	<script src="../static/js/Chart.js"></script>
+	<script src="../static/js/Chart.Scatter.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -68,19 +70,17 @@
 		</div>
 
 		<div id="group3" class="parallax__group">
-<<<<<<< HEAD
 			<div class="parallax__layer parallax__layer--fore">
 				<div id='stars'></div>
 				<div id='stars2'></div>
 				<div id='stars3'></div>
 				<div id='title'></div>
 			</div>
-=======
-			<div class="parallax__layer parallax__layer--fore"></div>
->>>>>>> 050e47e7fcce4295763fa01fb76c5bb9e7372e9f
 			<div class="parallax__layer parallax__layer--back"></div>
 			<div class="parallax__layer parallax__layer--base">
 				<div class="title">Here is where the graph could go :)</div>
+				<canvas id="myChart" width="400" height="400"></canvas>
+
 			</div>
 
 		</div>
@@ -98,44 +98,53 @@
 	</div>
 </div>		
 <script>
-	var data = '{{ data | tojson }}';
-	console.log(data)
+	var dataSet = '{{ data }}';
+	console.log(dataSet)
+	var formattedXY = []
+	for (var i = 0; i<dataSet.length; i++){
+		formattedXY.push({x: dataSet[i][5], y:dataSet[i][2]})
+	}
+	console.log(dataSet.length);
+	var data = [
+    {
+      label: 'My First dataset',
+      strokeColor: '#F16220',
+      pointColor: '#F16220',
+      pointStrokeColor: '#fff',
+      data: formattedXY
+    }
+  ];
+  	var options = {
+  		// SUPPORTED GLOBAL OPTIONS
+
+		// Boolean - If we should show the scale at all
+		showScale: true,
+
+		// String - Colour of the scale line
+		scaleLineColor: "rgba(0,0,0,.1)",
+
+		// Number - Pixel width of the scale line
+		scaleLineWidth: 1,
+
+		// Boolean - Whether to show labels on the scale
+		scaleShowLabels: true,
+
+		// Interpolated JS string - can access value
+		scaleLabel: "<%=value%>",
+
+		// Interpolated JS string - can access value
+		scaleArgLabel: "<%=value%>",
+
+		// String - Message for empty data
+		emptyDataMessage: "chart has no data"
+		  	}
+	var ctx = document.getElementById("myChart").getContext("2d");
+	new Chart(ctx).Scatter(data, options);
+
 </script>
 
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 050e47e7fcce4295763fa01fb76c5bb9e7372e9f
 </body> 
 </html>
