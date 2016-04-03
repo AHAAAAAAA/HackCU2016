@@ -11,20 +11,12 @@ body {
 
 .clouds{
 	padding: 100px 0;
-	background: rgba(230,82,55.3);
-	background: -webkit-linear-gradient(top,#E65237 30%,rgba(248, 135, 78, 0.55) 100%);
-	background: -linear-gradient(top, #C2E3FD 30%, rgba(248, 135, 78, 0.55) 100%);
-	background: -moz-linear-gradient(top, #C2E3FD 30%, rgba(248, 135, 78, 0.55) 100%);
+	background: #D7EDFF;
+	background: -webkit-linear-gradient(top, #D7EDFF 0%, #7FB2F0 100%);
+	background: -linear-gradient(top, #D7EDFF 0%, #7FB2F0 100%);
+	background: -moz-linear-gradient(top, #D7EDFF 0%, #7FB2F0 100%);
 }
 
-.clouds2{
-	
-	padding: 100px 0;
-	background:rgba(255,246,162,.2);
-	background: -webkit-linear-gradient(top, rgba(255, 247, 174, 0.62), rgba(227, 228, 144, 0.13) 100%);
-	background: -linear-gradient(top, rgba(255, 247, 174, 0.62), rgba(227, 228, 144, 0.13) 100%);
-	background: -moz-linear-gradient(top, rgba(255, 247, 174, 0.62), rgba(227, 228, 144, 0.13) 100%);
-}
 
 /*Time to finalise the cloud shape*/
 .cloud {
@@ -61,6 +53,10 @@ body {
 
 /*Time to animate*/
 .x1 {
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.3; /*opacity proportional to the size*/
 	-webkit-animation: moveclouds 15s linear infinite;
 	-moz-animation: moveclouds 15s linear infinite;
 	-o-animation: moveclouds 15s linear infinite;
@@ -131,7 +127,7 @@ body {
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
-	opacity: 0.8; 
+	opacity: 0.3; 
 	animation-iteration-count: infinite;
 	
 	-webkit-animation: moveclouds 20s linear infinite;
@@ -145,7 +141,7 @@ body {
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
-	opacity: 0.8; 
+	opacity: 0.2; 
 	animation-iteration-count: infinite;
 	
 	-webkit-animation: moveclouds 25s linear infinite;
@@ -182,7 +178,7 @@ body {
 	-webkit-transform: scale(0.75);
 	-moz-transform: scale(0.75);
 	transform: scale(0.75);
-	opacity: 0.75; /*opacity proportional to the size*/
+	opacity: 0.4; /*opacity proportional to the size*/
 	animation-iteration-count: infinite;
 	
 	-webkit-animation: moveclouds 50s linear infinite;
