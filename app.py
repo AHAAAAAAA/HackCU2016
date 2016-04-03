@@ -15,9 +15,9 @@ def hello():
 	data = trending_topics()
 	return render_template('dalvonic-home.html', page_title='Dalvonic', data=data)
 
-@app.route('/signUp')
+@app.route('/graph')
 def signUp():
-    return render_template('signUp.html')
+    return render_template('graph.html')
 
 @app.route('/signUpUser', methods=['POST'])
 def signUpUser():
