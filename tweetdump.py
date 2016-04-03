@@ -50,9 +50,10 @@ def get_user_tweets(screen_name): #could also be a user ID for user's tweets.
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-	auth.set_access_token(access_key, access_secret)
+	auth = tweepy.OAuthHandler(consumer_key2, consumer_secret2)
+	auth.set_access_token(access_key2, access_secret2)
 	api = tweepy.API(auth)
+
 	alltweets = []	
 	if api.rate_limit_status()['resources']['search']['/search/tweets']['remaining']==0:
 		auth = tweepy.OAuthHandler(consumer_key2, consumer_secret2)
@@ -61,7 +62,7 @@ def get_user_tweets(screen_name): #could also be a user ID for user's tweets.
 	#initialize a list to hold all the tweepy Tweets
 	#ahmed was here
 	#make initial request for most recent tweets (200 is the maximum allowed count)
-	new_tweets = api.user_timeline(screen_name = screen_name,count=200)
+	new_tweets = api.user_timeline(screen_name = screen_name)
 	
 	#save most recent tweets
 	alltweets.extend(new_tweets)
@@ -81,7 +82,7 @@ def get_user_tweets(screen_name): #could also be a user ID for user's tweets.
 	# 	oldest = alltweets[-1].id - 1
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
-	outtweets = [[tweet.text, tweet.id_str.encode('utf-8'), tweet.author._json['screen_name'].encode('utf-8'), tweet.created_at, "true".encode('utf-8')] for tweet in alltweets]
+	outtweets = [[tweet.text.encode("utf-8"), tweet.id, screen_name, tweet.created_at, "true"] for tweet in alltweets]
 	return outtweets
 
 def trending_topics():

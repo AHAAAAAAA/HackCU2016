@@ -12,10 +12,11 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 	<link href="../static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<!-- Personal CSS -->
 	<link rel="stylesheet" href="../static/css/animate.css">
-	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="../static/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="../static/css/style.css">
 	
 	<script src="../static/js/jquery.min.js"></script>
@@ -27,37 +28,40 @@
 	<script src="../static/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
 	<script src="../static/js/jquery.stellar.min.js"></script>
-	<script src="../static/js/main.js"></script>
+	<!-- <script src="../static/js/main.js"></script> -->
 
 	<title>Dalvonic</title>
 	<link href ="../static/css/dalvonic-style.css" rel= "stylesheet">
-	<script src="../static/js/dalvonic-interactive.js"></script>
+	<!-- <script src="../static/js/dalvonic-interactive.js"></script> -->
 </head>
 
 
 <body class= "home">
-	<div class="scroll-container">
+	<div class="scroll-container clearfix">
 		<header class = "row container top-buffer span3">
 			<h1 class="move" style="display:none">Dalvonic</h1>
 			<img class= "col-s12 img-responsive center-block" src="../static/img/header.png" alt="header">
 		</header>
 
-
+		<div class= "navbox">
+			<input type="text" id="text1" placeholder="username"> 
+			<input type="text" id="text2" placeholder="your hashtag pick of the day"> 
+		</div>
 		<div id="wrapper">
 			<div class="box-buffer center box-buffer">
 
 			</div>
-
+ 
 		<script>
 			var data = JSON.parse('{{ data | tojson }}');
-        // do stuff with the data
-        for (var i=1;i<=data.length;i++){
-        	var tmp = data[i].replace('#','');
-        	$('.container').append("<a href='graph?q="+tmp +"'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
-        	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>");
-        	$('head').append('<style type="text/css">body{background:#000;color:#fff}a,{a:visited{text-decoration:none;}</style>');
-        	//code for passing u!!!!!!
-        }
+			        // do stuff with the data
+			        for (var i=1;i<=data.length;i++){
+			        	var tmp = data[i].replace('#','');
+			        	$('.box-buffer').append("<a href='graph?q="+tmp +"'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
+			        	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>");
+			        	$('head').append('<style type="text/css">body{background:#000;color:#fff}a,{a:visited{text-decoration:none;}</style>');
+			        	//code for passing u!!!!!!
+			        }
     	</script>
 	</div>
 

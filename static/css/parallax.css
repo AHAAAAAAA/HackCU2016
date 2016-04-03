@@ -12,6 +12,7 @@
   perspective: 300px;
 }
 
+
 .parallax__group {
   position: relative;
   height: 500px;
@@ -137,6 +138,7 @@ body, html {
 
 
 #group2 .parallax__layer--back{
+  background: #002D48;
 }
 
 
@@ -155,7 +157,7 @@ body, html {
 }
 
 #group4 .parallax__layer--deep {
-  	background: #4E7AC7;
+  	background: #002D48;
 }
 
 #group5 {
@@ -164,31 +166,12 @@ body, html {
 }
 
 #group5 .parallax__layer--base {
-  background: #1B3442;
-}
-
-#group6 {
-  z-index: 2;
-  /* slide under group 5 and 7 */
-}
-
-#group6 .parallax__layer--back {
-  background-color:#1B3442;
-}
-
-#group7 {
-  z-index: 3;
-  /* slide over group 7 */
-}
-
-#group7 .parallax__layer--base {
-   background-color:#1B3442;
- 
+  background: #002D48;
 }
 
 /* misc
   --------------------------------------------- */
-.demo__info {
+/*.demo__info {
   position: absolute;
   z-index: 100;
   bottom: 1vh;
@@ -196,7 +179,7 @@ body, html {
   font-size: 80%;
   text-align: center;
   width: 100%;
-}
+}*/
 
 
 

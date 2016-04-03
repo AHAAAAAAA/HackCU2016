@@ -8,7 +8,10 @@
 	background-position: fixed;
   font-family: 'Lato', sans-serif;
 }
-
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
 h1{ 
 	position: absolute;
 	top: -9999em;  
@@ -50,7 +53,9 @@ a:visited{
 	margin-top:30px;
 }
 .box-buffer{
-  margin-top:40px;
+  width:55%;
+  height:60%;
+  margin:0 auto;
 }
 
 .container{
@@ -67,6 +72,41 @@ a:visited{
 }
 
 
-  
+#text1 {
+    border: 2px solid rgb(173, 204, 204);
+    height: 25px;
+    width: 223px;
+    box-shadow: 0 0 27px rgb(204, 204, 204) inset;
+    transition: 500ms all ease;
+    padding: 3px 3px 3px 3px;
+    float:right;
+}
+#text2 {
+    border: 2px solid rgb(173, 204, 204);
+    height: 25px;
+    width: 223px;
+    box-shadow: 0 0 27px rgb(204, 204, 204) inset;
+    transition: 500ms all ease;
+    padding: 3px 3px 3px 3px;
+    float:left;
+}
+#text1:hover,
+#text1:focus,
+#text2:hover,
+#text2:focus {
+    width: 260px;
+    transition: 500ms all ease;
+    background: url() no-repeat right;
+    background-size: 25px 25px;
+    background-position: 96% 62%;
+    padding: 3px 32px 3px 3px;
 }
 
+
+.navbox {
+  width:600px;
+  padding-top: 25px;
+  height:100px;
+  margin-top: 10%;
+  margin: 0 auto;
+}
