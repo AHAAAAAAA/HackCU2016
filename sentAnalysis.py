@@ -4,15 +4,6 @@ import codecs
 import csv
 import json
 from sentiment import sentiment_score
-class tweet():
-  def __init__(self):
-    self.tweet     = ''
-    self.tId       = ''
-    self.x         = 0
-    self.y         = 0
-    self.user      = ''
-    self.createdAt = ''
-
 def preprocessTweets(data):
   processed = []
   for i in data:
