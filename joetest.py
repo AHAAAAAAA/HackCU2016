@@ -16,16 +16,19 @@ from tweetdump import *
 # for i in data:
 # 	print i
 from sentAnalysis import *
-import nltk
 
-#call to tweetdump with topic hashtag input
-opinions = get_all_tweets("fidelity")
-print opinions
-print '\n'
-#pass tweetdump output to sentAnalysis
-opinions = preprocessTweets(opinions)
-for i in opinions:
-	print i[0]
-opinions = sentimentAnalysis(opinions)
-print opinions
+from sentiment import sentiment_score
+print sentiment_score(' Trump.')
+# import nltk
+
+# #call to tweetdump with topic hashtag input
+# opinions = get_all_tweets("fidelity")
+# print opinions
+# print '\n'
+# #pass tweetdump output to sentAnalysis
+# opinions = preprocessTweets(opinions)
+# for i in opinions:
+# 	print i[0]
+# opinions = sentimentAnalysis(opinions)
+# print opinions
 #Pass complete tweet topic info to front end for display.
