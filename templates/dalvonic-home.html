@@ -55,9 +55,10 @@
         	var tmp = data[i].replace('#','');
         	$('.container').append("<a href='graph?q="+tmp +"'><div class='box col'><span><p id="+ i +"></p></span></div></a>")
         	$('#'+i).append("<a href='graph?q="+tmp+"'>"+data[i]+"</a>");
-        	$('head').append('<style type="text/css">body{background:#000;color:#fff}a,a:visited{text-decoration:none;}</style>');
+        	$('head').append('<style type="text/css">body{background:#000;color:#fff}a,{a:visited{text-decoration:none;}</style>');
         }
     	</script>
+	</div>
 
 </div>
 </body>
