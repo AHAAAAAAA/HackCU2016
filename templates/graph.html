@@ -90,13 +90,15 @@
 			</div>
 			<div class="parallax__layer parallax__layer--back">			
 			</div>
+			<div class="parallax__layer parallax__layer--fore">
+			</div>
 			<div class="parallax__layer parallax__layer--deep">
 			</div>
 		</div>
-
-		
 	</div>
-</div>		
+
+</div>
+			
 <script>
 	var dataSet = JSON.parse('{{ data | tojson }}');
 	console.log(dataSet)
@@ -142,7 +144,6 @@
 	new Chart(ctx).Scatter(data, options);
 
 </script>
-
 </body>
 </html>
 
