@@ -20,14 +20,23 @@ def hello():
 def hi():
 	query =  '#'+request.args.get('q')
 	user =  ''+request.args.get('u')
-	cleanUserTweets = []
-	if user!='None':
-		userTweets = get_user_tweets(user)
-		for i in userTweets:
-			if i[0].decode("utf-8").find(query)!= -1:
-				cleanUserTweets.append(i)
-	outTweets = get_all_tweets(query)
-	outTweets.extend(cleanUserTweets)
+	if user == '' and query == '#':
+		data = trending_topics()
+		return render_template('dalvonic-home.html', page_title='Dalvonic', data=data)
+	elif query == '#':
+		outTweets = get_user_tweets(user)
+	elif user == '':
+		user = 'None'
+		outTweets = get_all_tweets(query)
+	else:
+		cleanUserTweets = []
+		if user!='None':
+			userTweets = get_user_tweets(user)
+			for i in userTweets:
+				if i[0].decode("utf-8").find(query)!= -1:
+					cleanUserTweets.append(i)
+		outTweets = get_all_tweets(query)
+		outTweets.extend(cleanUserTweets)
 	#searches throught user tweets and matches querys
 	data = preprocessTweets(outTweets)
 	return render_template('graph.html', page_title='Dalvonic', data=map(json.dumps, data))
